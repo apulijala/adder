@@ -1,6 +1,7 @@
 pipeline{
     agent{
-        dockercloud {
+
+        docker {
             label "docker"
             image "python:3"
         }
