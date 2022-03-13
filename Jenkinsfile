@@ -1,10 +1,8 @@
 pipeline{
+
     agent{
-        label "docker"
-        image 'python:3'
+       docker 'maven:3.8.1-adoptopenjdk-11'
     }
-    
-    
     
     stages {
         stage("Compile") {
