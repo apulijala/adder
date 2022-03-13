@@ -1,7 +1,10 @@
 pipeline{
 
     agent{
-       docker 'maven:3.8.1-adoptopenjdk-11'
+       docker {
+            label 'docker'
+            image 'python:3'
+       }
     }
     
     stages {
