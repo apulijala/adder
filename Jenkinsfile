@@ -1,10 +1,12 @@
-pipeline{
+pipeline {
+
     agent {
         docker {
-            label 'docker'
-            image 'python:3'
-        }
+               image 'python:3'
+                label 'docker'
+            }
     }
+    
     stages {
         stage("Compile") {
             steps{
