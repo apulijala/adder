@@ -11,6 +11,9 @@ pipeline {
         }
         
         stage('run-parallel-branches') {
+            agent {
+                label "docker"
+            }
             steps {
                 parallel(
                     a: {
