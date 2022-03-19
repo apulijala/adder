@@ -5,6 +5,7 @@ pipeline {
     
     stages {
         stage("running docker") {
-    }
+            echo "running a single stage"
+        }
   }
 }
