@@ -1,13 +1,12 @@
 pipeline {
 
     agent {
+
        dockerfile {
             label 'docker'
        }
     }
 
-    
-    
     stages {
         
         stage("Compile") {
