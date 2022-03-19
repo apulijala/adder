@@ -2,10 +2,14 @@ pipeline {
     agent{
         label "docker"
     }
-    
-    stages {
-        stage("running docker") {
-            echo "running a single stage"
+    stages{
+        stage("Running some command"){
+
+            steps{
+                echo "========executing A========"
+            }
+            
         }
-  }
+    }
+
 }
