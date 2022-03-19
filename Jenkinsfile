@@ -31,6 +31,7 @@ pipeline {
             }
             steps {
                 echo "Sree Gurobhyo Namaha !!"
+                echo "Om Aim Hreem Shreem Kleem Shree Mathre Namaha !!"
             }
 
             post {
