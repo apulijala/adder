@@ -1,25 +1,6 @@
 node("linux || east")  {
     stage("Source") {
-
-        steps {
-            echo "In the source"
-            sh "docker run hello-world"
-        }
-
-        parallel (
-            win: {
-                node("east") {
-                    echo "Running windows parallely"
-                }
-            },
-
-            liunx: { node ("docker") {
-                    echo "In the docker world "
-            }}
-
-        )
-        
-        
+        echo "only the source is present"
     }
 
 
