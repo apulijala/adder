@@ -29,6 +29,9 @@ pipeline {
                     --cov-report xml --cov adder adder.py
                     '''
             }
+            steps {
+                echo "Sree Gurobhyo Namaha !!"
+            }
 
             post {
                     always {
