@@ -4,8 +4,7 @@ pipeline {
        dockerfile {
             label 'docker'
        }
-
-        parameters {
+       parameters {
             string (name: 'REF', defaultValue: '\${ghprbActualCommit}', 
             description: 'Commit to Build')
         }
@@ -14,6 +13,7 @@ pipeline {
     stages {
         
         stage("Compile") {
+
             steps{
                 sh 'python3 -m compileall adder.py'
             }
@@ -35,13 +35,7 @@ pipeline {
                     '''
             }
 
-            steps {
-            
-                echo "Sree Gurobhyo Namaha !!"
-                echo "Om Aim Hreem Shreem Kleem Shree Mathre Namaha !!"
-                echo "Jaya Guru datta"
-
-            }
+          
 
             post {
                     always {
@@ -52,6 +46,16 @@ pipeline {
                     } 
             }
         }
+        stage("Test and Build the spec") {
+              steps {
+            
+                echo "Sree Gurobhyo Namaha !!"
+                echo "Om Aim Hreem Shreem Kleem Shree Mathre Namaha !!"
+                echo "Jaya Guru datta"
+
+            }
+        }
+
 
     }
 }
