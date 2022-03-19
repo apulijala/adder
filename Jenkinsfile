@@ -6,7 +6,7 @@ pipeline {
         stage("Running some command") {
             steps{
                 echo "========executing A========"
-                input id: 'ctns-prompt', message: 'Do You want to proceed to next stage ? '
+                input message: 'Do you want to Continue ? ', submitterParameter: 'approver'
             }
 
             
