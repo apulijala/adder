@@ -14,10 +14,10 @@ pipeline {
             steps {
                 parallel(
                     a: {
-                        echo "This is branch a"
+                        echo "Parallel Branch A"
                     },
                     b: {
-                        echo "This is branch b"
+                        echo "Parllel Branch B and B"
                     }
                     )
             }
