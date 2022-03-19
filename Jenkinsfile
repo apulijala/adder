@@ -5,13 +5,13 @@ pipeline{
     }
     
     stages {
-        
-        stage("A"){
-            steps {
-                echo "========executing A========"
+
+        stage("running docker") {
+            agent {
+                label "docker"
             }
             steps {
-                echo "Jaya Guru Datta"
+                echo "========executing A========"
             }
             post{
                 always{
@@ -26,18 +26,25 @@ pipeline{
             }
         }
         stage('run-parallel-branches') {
+            agent {
+                    label "docker"
+            }
             steps {
                 parallel(
                 a: {
-                    echo "This is branch a"
-                },
+                            echo "This is branch a"
+                   }
+                        
+                    
                 b: {
-                    echo "This is branch b"
-                }
+
+                        node("docker") {
+                            echo "This is branch b"
+                        }
+                    }
                 )
             }
         }
-
     }
     post{
         always{
