@@ -43,13 +43,9 @@ pipeline {
                     } 
             }
         }
-        stage("Test and Build the spec") {
-              steps {
-            
-                echo "Sree Gurobhyo Namaha !!"
+        stage("Hello GitHub") {
+            steps {
                 echo "Om Aim Hreem Shreem Kleem Shree Mathre Namaha !!"
-                echo "Jaya Guru datta"
-
             }
         }
 
