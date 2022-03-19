@@ -4,19 +4,18 @@ pipeline{
     }
 
     stages {
-        stage("Compile") {
+        stage('run-parallel-branches') {
             steps {
                 parallel(
-                        a: {
-                            echo "This is branch a"
-                        },
-                        b: {
-                            echo "This is branch b"
-                        }
+                a: {
+                    echo "This is branch a"
+                },
+                b: {
+                    echo "This is branch b"
+                }
                 )
             }
-
-        }   
+        }
     }
 }
 
