@@ -1,7 +1,6 @@
 pipeline{
 
     agent {
-
        dockerfile {
             label 'docker'
        }
@@ -30,6 +29,12 @@ pipeline{
                     --cov-report xml --cov adder adder.py
                     '''
             }
+        }
+        post{
+            always{
+                echo "====++++always++++===="
+            }
+         
         }
         
     }
