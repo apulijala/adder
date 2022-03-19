@@ -33,7 +33,7 @@ pipeline {
             post {
                     always {
                         junit 'junit.xml'
-                        cobertura  coberturaReportFile: 'newcoverage.xml', conditionalCoverageTargets: '70, 0, 0', failUnhealthy: false, failUnstable: false, lineCoverageTargets: '80, 0, 0', maxNumberOfBuilds: 0, methodCoverageTargets: '80, 0, 0',  zoomCoverageChart: false
+                        cobertura  coberturaReportFile: 'coverage.xml', conditionalCoverageTargets: '70, 0, 0', failUnhealthy: false, failUnstable: false, lineCoverageTargets: '80, 0, 0', maxNumberOfBuilds: 0, methodCoverageTargets: '80, 0, 0',  zoomCoverageChart: false
                     } 
             }
         }
