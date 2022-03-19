@@ -32,6 +32,7 @@ pipeline {
 
             post {
                     always {
+                        echo "Trigger the Build"
                         junit 'junit.xml'
                         cobertura  coberturaReportFile: 'coverage.xml', conditionalCoverageTargets: '70, 0, 0', failUnhealthy: false, failUnstable: false, lineCoverageTargets: '80, 0, 0', maxNumberOfBuilds: 0, methodCoverageTargets: '80, 0, 0',  zoomCoverageChart: false
                     } 
