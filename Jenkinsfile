@@ -23,14 +23,5 @@ pipeline{
             }
         }
         
-        stage("Unit Test") {
-            steps {
-                sh '''python3 -m pytest \
-                    -v --junitxml=junit.xml \
-                    --cov-report xml --cov adder adder.py
-                    '''
-            }
-        }   
-
     }
 }
