@@ -5,9 +5,6 @@ pipeline{
 
     stages {
         stage("Compile"){
-            steps{
-                echo "========executing A========"
-            }
             parallel (
                 win: {
                     node("east") {
@@ -32,8 +29,6 @@ pipeline{
                     echo "========A execution failed========"
                 }
             }
-
-
         }
     }
 }
