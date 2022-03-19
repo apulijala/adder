@@ -38,7 +38,11 @@ pipeline {
                     } 
             }
         }
-        
+        stage("Hello GitHub") {
+            steps {
+                echo "Om Aim Hreem Shreem Kleem Shree Mathre Namaha !!"
+            }
+        }
 
     }
 }
