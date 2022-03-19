@@ -7,6 +7,7 @@ pipeline {
             steps{
                 echo "========executing A========"
                 input message: 'Do you want to Continue ? ', submitterParameter: 'approver'
+                echo "Answered By " + resp['approver']
             }
 
             
