@@ -6,10 +6,7 @@ pipeline {
         stage("Running some command") {
             steps{
                 echo "========executing A========"
-                def resp = input message: 'Do you want to Continue ? ', submitterParameter: 'approver'
-                echo "Complete response  " + resp
-                echo "Answered By " + resp['approver']
-            }
+                
 
             
         }
