@@ -1,11 +1,16 @@
 pipeline{
+    
     agent{
-        label "docker && east"
+        label "docker"
     }
+    
     stages {
         stage("A"){
-            steps{
+            steps {
                 echo "========executing A========"
+            }
+            steps {
+                echo "Jaya Guru Datta"
             }
             post{
                 always{
