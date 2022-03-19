@@ -1,4 +1,4 @@
-pipeline{
+pipeline {
 
     agent {
        dockerfile {
@@ -37,5 +37,5 @@ pipeline{
                 cobertura coberturaReportFile: 'coverage.xml'
                 }   
         }   
+    }
 }
- 
