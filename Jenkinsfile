@@ -24,20 +24,13 @@ pipeline{
         }
         
         stage("Unit Test") {
-            steps{
+            steps {
                 sh '''python3 -m pytest \
                     -v --junitxml=junit.xml \
                     --cov-report xml --cov adder adder.py
                     '''
             }
-        }
-        post{
-            always{
-                junit 'junit.xml'
-                cobertura  coberturaReportFile 'coverage.xml'
-            }
-           
-        }
+        }   
 
     }
 }
