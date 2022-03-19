@@ -4,32 +4,19 @@ pipeline{
     }
 
     stages {
-        stage("Compile"){
-            parallel (
-                win: {
-                    node("east") {
-                        echo "Running windows parallely"
-                    }
-                },
-
-                liunx: { node ("docker") {
-                        echo "In the docker world "
-                    }
-                }
-        )
-
-            post{
-                always{
-                    echo "========always========"
-                }
-                success{
-                    echo "========A executed successfully========"
-                }
-                failure{
-                    echo "========A execution failed========"
-                }
+        stage("Compile") {
+            steps {
+                parallel(
+                        a: {
+                            echo "This is branch a"
+                        },
+                        b: {
+                            echo "This is branch b"
+                        }
+                )
             }
-        }
+
+        }   
     }
 }
 
