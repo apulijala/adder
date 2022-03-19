@@ -1,6 +1,6 @@
 pipeline{
     agent{
-        label "node"
+        label "docker && east"
     }
     stages {
         stage("A"){
