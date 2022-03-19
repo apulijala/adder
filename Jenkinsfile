@@ -4,6 +4,11 @@ pipeline {
        dockerfile {
             label 'docker'
        }
+
+        parameters {
+            string (name: 'REF', defaultValue: '\${ghprbActualCommit}', 
+            description: 'Commit to Build')
+        }
     }
     
     stages {
