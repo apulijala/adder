@@ -2,6 +2,7 @@ node("linux || east")  {
     stage("Source") {
         echo "In the source"
         sh "docker run hello-world"
+        git 'https://github.com/apulijala/adder.git'
     }
 
     stage("Compile") {
