@@ -1,9 +1,27 @@
 node("linux || east")  {
     stage("Source") {
-        echo "In the source"
-        sh "docker run hello-world"
+
+        steps {
+            echo "In the source"
+            sh "docker run hello-world"
+        }
+
+        parallel (
+            win: {
+                node("east") {
+                    echo "Running windows parallely"
+                }
+            },
+
+            liunx: { node ("docker") {
+                    echo "In the docker world "
+            }}
+
+        )
+        
         
     }
+
 
     stage("Compile") {
         echo "Compiling the code"
