@@ -1,10 +1,27 @@
-node("docker") {
-    stage("Source") {
-        echo "In the source"
-        sh "docker run hello-world"
+pipeline{
+    agent{
+        label "docker"
     }
 
-    stage("Compile") {
-        echo "Compiling the code"
+    stages {
+        stage("Compile"){
+            steps{
+                echo "========executing A========"
+            }
+            post{
+                always{
+                    echo "========always========"
+                }
+                success{
+                    echo "========A executed successfully========"
+                }
+                failure{
+                    echo "========A execution failed========"
+                }
+            }
+        }
     }
 }
+
+
+
