@@ -10,28 +10,7 @@ pipeline {
             }
         }
 
-        stage("Running Paallel") {
-
-            parallel {
-                stage("Running first command") {
-                    agent {
-                        label "docker"
-                    }
-                    steps {
-                        echo Running first parallel step 
-                    }
-                }
-
-                stage("Running second command") {
-                    agent {
-                        label "docker"
-                    }
-                    steps {
-                        echo Running second parallel step
-                    }
-                }
-            }
-        }
+       
 
 
         
