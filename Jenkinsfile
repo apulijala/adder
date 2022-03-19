@@ -6,11 +6,8 @@ pipeline {
         stage("Running some command") {
             steps{
                 echo "========executing A========"
-                
-
-            
-        }
-        
+            }
+        } 
         stage('run-parallel-branches') {
             agent {
                 label "docker"
