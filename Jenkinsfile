@@ -1,20 +1,20 @@
 pipeline {
 
     agent {
-
        dockerfile {
             label 'docker'
        }
     }
+    parameters {
+        string(name: 'REF', defaultValue: 'enter branch', description: ' Jaya Guru Datta ')
+    }
 
     stages {
-        
-        stage("Compile") {
 
+        stage("Compile") {
             steps{
                 sh 'python3 -m compileall adder.py'
             }
-            
         }
 
         stage("Run"){
