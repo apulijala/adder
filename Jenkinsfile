@@ -34,7 +34,7 @@ pipeline {
             
                 echo "Sree Gurobhyo Namaha !!"
                 echo "Om Aim Hreem Shreem Kleem Shree Mathre Namaha !!"
-                echo "Hello world"
+                echo "Jaya Guru datta"
 
             }
 
