@@ -1,9 +1,24 @@
 pipeline{
     agent{
-        label "docker"
+        label "node"
     }
-
     stages {
+        stage("A"){
+            steps{
+                echo "========executing A========"
+            }
+            post{
+                always{
+                    echo "========always========"
+                }
+                success{
+                    echo "========A executed successfully========"
+                }
+                failure{
+                    echo "========A execution failed========"
+                }
+            }
+        }
         stage('run-parallel-branches') {
             steps {
                 parallel(
@@ -15,6 +30,19 @@ pipeline{
                 }
                 )
             }
+        }
+
+}
+    }
+    post{
+        always{
+            echo "========always========"
+        }
+        success{
+            echo "========pipeline executed successfully ========"
+        }
+        failure{
+            echo "========pipeline execution failed========"
         }
     }
 }
