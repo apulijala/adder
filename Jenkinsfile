@@ -30,12 +30,12 @@ pipeline{
                     '''
             }
         }
-        post{
-            always{
-                echo "====++++always++++===="
-            }
-         
-        }
-        
-    }
+
+        post {
+            always {
+                junit 'junit.xml'
+                cobertura coberturaReportFile: 'coverage.xml'
+                }   
+        }   
 }
+ 
