@@ -63,7 +63,7 @@ pipeline {
                 script {
 
                     // will not work. 
-                    print "${resp}"
+                    println "${resp}"
                 }
                 
             }
