@@ -56,13 +56,21 @@ pipeline {
                   println("Username = " + loginInformation["userid"])
                   println("Password =  +  ${loginInformation['passwd']}")
                   println(" Using dot operator " + loginInformation.passwd)
+
+                  def resp = "hello"
                  
+                }   
+                script {
+
+                    // will not work. 
+                    print "${{resp}}"
                 }
                 
             }
         } 
         stage('run-parallel-branches') {
             agent {
+                label "docker"
                 label "docker"
             }
             steps {
