@@ -7,8 +7,10 @@ pipeline {
         booleanParam(name :"yesno", defaultValue: false, description : "Checkbox" )
         choice(name : "planet", choices : ["Mercury", "Venus", "Mars", "Jupiter"]  )
         text(name : "story", defaultValue :"Default value of the story", 
-                description : "Default value of the")
-        password(name : "secret", defaultValue :"password", description: "Enter the password")
+                description : "Default value of the Story")
+        password(name : "secret", 
+                defaultValue :"password", 
+                description: "Enter the password")
     }
 
     stages {
@@ -22,6 +24,11 @@ pipeline {
                     }else {
                         println("Hostname is something else : ${hostname}")
                     }
+
+                    println("Password is ${password}")
+                    println("Text value is ${story}")
+                    println("Boolean value is ${booleanParam}")
+                    println("Password is ${{password}}")
                     
                 }
                 
