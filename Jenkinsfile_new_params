@@ -19,6 +19,8 @@ pipeline {
                                 )
                             ]
                     echo "Answer is ${answer}"
+                    echo "Option is ${answer['Options']}"
+                    echo "Perrelease is ${answer['prerelease']}"
 
 
                     
