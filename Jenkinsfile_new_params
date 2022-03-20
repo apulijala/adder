@@ -7,11 +7,7 @@ pipeline {
         stage("Running some command") {
 
             steps {
-                echo "Input lines are ${InputLines}"
-
                 echo "========executing A========"
-                script {
-                }
                 
             }
         } 
