@@ -28,7 +28,14 @@ pipeline {
                         defaultValue: 'jenkins2-ssh', description: 'SSH key for access',
                         name: 'SSH', required: true]]
                         echo creds
-                 
+
+                    def credUserNamePassword = input message: '',  parameters: [[$class:
+                        'CredentialsParameterDefinition', credentialType:
+                        'com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl',
+                        defaultValue: '', description: 'Enter username and password',
+                        name: 'User And Pass', required: true]]
+
+                    echo $credUserNamePassword
                     
                 }
                 
