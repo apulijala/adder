@@ -14,6 +14,7 @@ pipeline {
                                     description : "Prerelease setting", name : "prerelease"
                                 )
                             ]
+                    echo "${answer}"
                 }
                 
                 
@@ -24,6 +25,18 @@ pipeline {
                 label "docker"
             }
             steps {
+                
+                script {
+                   def choice = input message : "Choice Input Message ? ", 
+                        parameters : [
+                            choice(
+                                choices: "choice1\nchoice2\nchoice3\nchoice4\n", 
+                                description : "Choose an option", name : "Options"
+                            )
+                        ]
+                    println(choice)
+                }
+
                 parallel(
                     a: {
                         echo "Parallel Branch A"
