@@ -9,8 +9,10 @@ pipeline {
 
     stages {
         stage("Running some command") {
-
             steps {
+                script {
+                    echo "Hostname is "
+                }
                 echo "Hostname is ${hostname}"
                 
             }
