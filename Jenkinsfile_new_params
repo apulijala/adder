@@ -14,7 +14,7 @@ pipeline {
                 echo "========executing A========"
                 script {
 
-                    echo "Name is ${hostname} "
+                  
                     def answer = input message : "Is this Input Message ? ",
                     parameters : [
                         booleanParam(defaultValue : true, 
