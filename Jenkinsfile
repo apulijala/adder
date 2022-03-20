@@ -7,7 +7,9 @@ pipeline {
             steps{
                 echo "========executing A========"
                 script {
-                    def z = input id: 'Approver', message: 'Om Aim Hreem Shreem Kleem Shree Mathre Namaha', ok: 'Approve it', submitterParameter: 'approver'
+                    def response = input id: 'Approver', message: 'Om Aim Hreem Shreem Kleem Shree Mathre Namaha', ok: 'Approve it', submitterParameter: 'approver'
+                    echo "${response}"
+
                 }
                 
                 
