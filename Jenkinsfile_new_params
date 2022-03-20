@@ -14,12 +14,15 @@ pipeline {
                                     description : "Prerelease setting", name : "prerelease"
                                 )
                             ]
-                    echo "${answer}"
-                    parameters : [
+                    echo "Answer is ${answer}"
+
+                    def paramvalues = parameters : [
                                 booleanParam(defaultValue : true, 
                                     description : "Prerelease setting", name : "prerelease"
                                 )
                             ]
+
+                    echo "Parameters are ${paramvalues}"
                 }
 
                 script {
