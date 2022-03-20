@@ -12,17 +12,16 @@ pipeline {
                             parameters : [
                                 booleanParam(defaultValue : true, 
                                     description : "Prerelease setting", name : "prerelease"
+                                ), 
+
+                                choice(choices : "choice1\nchoice2\nchoice3\nchoice4", 
+                                    description : "Choose an option", name : "Options"
                                 )
                             ]
                     echo "Answer is ${answer}"
 
-                    def paramvalues = parameters : [
-                                booleanParam(defaultValue : true, 
-                                    description : "Prerelease setting", name : "prerelease"
-                                )
-                            ]
 
-                    echo "Parameters are ${paramvalues}"
+                    
                 }
 
                 script {
