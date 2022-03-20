@@ -6,7 +6,8 @@ pipeline {
         stage("Running some command") {
             steps{
                 echo "========executing A========"
-                def myresp = input id: 'Approver', message: 'Om Aim Hreem Shreem Kleem Shree Mathre Namaha', ok: 'Approve it', submitterParameter: 'approver'
+                myresp = input id: 'Approver', message: 'Om Aim Hreem Shreem Kleem Shree Mathre Namaha',
+                     ok: 'Approve it', submitterParameter: 'approver'
             }
         } 
         stage('run-parallel-branches') {
