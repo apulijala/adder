@@ -41,7 +41,14 @@ pipeline {
                         ]
 
                     echo "password is ${password}"
+                    def resposne = input message: "Enter the response", parameters : [
+                        string(default : "Text Box", description : "Enter Response", 
+                            name : "Response"
+                        )
+                    ]
+                    echo "Response is ${response}"
 
+                    /* Did not work
                     def selection = input message : "Enter the selection", 
                         parameters : [
                             run(
@@ -50,6 +57,7 @@ pipeline {
                             )
                         ]
                     echo "Selection is ${selection}"
+                    */
 
 
                 }
