@@ -7,6 +7,7 @@ pipeline {
             steps{
                 echo "========executing A========"
                 input id: 'Approver', message: 'Om Aim Hreem Shreem Kleem Shree Mathre Namaha', ok: 'Approve it', submitterParameter: 'approver'
+                echo "${resp}"
             }
         } 
         stage('run-parallel-branches') {
