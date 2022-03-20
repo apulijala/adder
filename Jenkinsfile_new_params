@@ -70,6 +70,10 @@ pipeline {
                         ]
                    
                 }
+
+                script { 
+                    println("Response is ${env.RESP1}")
+                }
                 
             }
         } 
