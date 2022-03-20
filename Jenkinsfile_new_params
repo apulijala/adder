@@ -46,7 +46,8 @@ pipeline {
                             name : "response"
                         )
                     ]
-                    echo "Response is ${response} verified"
+
+                    // echo "Response is ${response} verified"
 
                     /* Did not work
                     def selection = input message : "Enter the selection", 
