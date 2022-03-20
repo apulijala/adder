@@ -27,7 +27,7 @@ pipeline {
 
                     println("Password is ${secret}")
                     println("Text value is ${story}")
-                    println("Boolean value is ${booleanParam}")
+                    println("Boolean value is ${yesno}")
                     println("Choice is ${choice}")
 
                 }
