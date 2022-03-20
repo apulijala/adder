@@ -8,7 +8,7 @@ pipeline {
                 echo "========executing A========"
                 script {
 
-                    def answer = input message : "<message>",
+                    def answer = input message : "Is this Input Message ? ",
                             parameters : [
                                 booleanParam(defaultValue : true, 
                                     description : "Prerelease setting", name : "prerelease"
