@@ -11,77 +11,7 @@ pipeline {
         stage("Running some command") {
 
             steps {
-                echo "========executing A========"
-                script {
-
-                  
-                    def answer = input message : "Is this Input Message ? ",
-                    parameters : [
-                        booleanParam(defaultValue : true, 
-                            description : "Prerelease setting", name : "prerelease"
-                        ), 
-
-                        choice(choices : "choice1\nchoice2\nchoice3\nchoice4", 
-                            description : "Choose an option", name : "Options"
-                        )
-                    ]
-                    echo "Answer is ${answer}"
-                    def lines = input message : "Select lines",
-                        parameters : [
-                            text(
-                                defaultValue : """
-                                    Line one, 
-                                    Jaya Guru Datta and Sree Guru Datta, 
-                                """, 
-                                description : "Select the lines", 
-                                name : "InputLines"
-                            )
-                        ]
-                    echo "Lines are ${lines}"
-
-                    def password = input message : "Enter password", 
-                        parameters : [
-                            password(defaultValue : "password", 
-                                    description : "Enter your password", name : "passwd")
-                        ]
-
-                    echo "password is ${password}"
-                    def resposne = input message: "Enter the response", parameters : [
-                        string(default : "Text Box", description : "Enter Response", 
-                            name : "response"
-                        )
-                    ]
-
-                    // echo "Response is ${response} verified"
-
-                    /* Did not work
-                    def selection = input message : "Enter the selection", 
-                        parameters : [
-                            run(
-                                description : "Choose the run of the project", 
-                                filter  : "ALL", name : "RUN"
-                            )
-                        ]
-                    echo "Selection is ${selection}"
-                    */
-
-                    def loginInfo = input message : "Enter Login ", 
-                            parameters : [
-                                string(defaultValue : "" , description : "Enter User Id: ", 
-                                    name : "userid"
-                                ), 
-                                password(
-                                    defaultValue : "", description : "Enter Password: ", 
-                                    name : "passwd"
-                                )
-                            ]
-                    echo "User name = " + loginInfo["userid"]
-                    echo "Password = ${loginInfo['passwd']}"
-                    echo loginInfo.userid + " " + loginInfo.passwd
-                    echo "Different ways to extranct parameters"
-
-                }
-                            
+                echo "Hostname is ${hostname}"
                 
             }
         } 
