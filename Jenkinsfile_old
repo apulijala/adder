@@ -1,9 +1,9 @@
 node("linux || east")  {
     stage("Source") {
-        
+
         echo "only the source is present"
         def resp = input message: 'Do you want to Continue ? ', submitterParameter: 'approver'
-        echo Build approved by  + resp['approver']
+        echo "Build approved by   ${resp}"
     }
 
 
