@@ -4,7 +4,7 @@ pipeline {
     }
     stages {
         stage("Running some command") {
-            steps{
+            steps {
                 echo "========executing A========"
                 script {
 
@@ -23,20 +23,6 @@ pipeline {
 
                     
                 }
-
-                script {
-                   def choice = input message : "Choice Input Message ? ", 
-                        parameters : [
-                            choice(
-                                choices: "choice1\nchoice2\nchoice3\nchoice4\n", 
-                                description : "Choose an option", name : "Options"
-                            )
-                        ]
-                    println(choice)
-                }
-
-
-                
                 
             }
         } 
