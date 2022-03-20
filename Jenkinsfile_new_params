@@ -2,6 +2,7 @@ pipeline {
     agent{
         label "docker"
     }
+
     parameters {
         string( name : "hostname", defaultValue: "demo-dev", description : "Hostname"   )
         booleanParam(name :"yesno", defaultValue: false, description : "Checkbox" )
@@ -60,11 +61,6 @@ pipeline {
                   def resp = "hello"
                  
                 }   
-                script {
-
-                    // will not work. 
-                    println "${resp}"
-                }
                 
             }
         } 
