@@ -20,7 +20,7 @@ pipeline {
                 script {
                     // https://code-maven.com/jenkins-pipeline-parameters
                     if (hostname == "demo-dev") {
-                        println ("Hostname is ${hostname}")
+                        println ("Hostname is ${params.hostname}")
                     }else {
                         println("Hostname is something else : ${hostname}")
                     }
@@ -56,6 +56,19 @@ pipeline {
                   println("Username = " + loginInformation["userid"])
                   println("Password =  +  ${loginInformation['passwd']}")
                   println(" Using dot operator " + loginInformation.passwd)
+                        def lines = input message : "lines", 
+                            parameters : [
+                                text(defaultValue : """
+                                    Line 1 and First Line. 
+                                    Line 2 and Second Line. 
+                                    Third Line
+                                    """, 
+                                    description :" All the Lines",
+                                    name :"inputlines"
+                                )
+                            ]
+
+                    println("Lines are " + lines)
 
 
                 }
