@@ -58,8 +58,6 @@ pipeline {
                   println("Password =  +  ${loginInformation['passwd']}")
                   println(" Using dot operator " + loginInformation.passwd)
 
-                  def resp = "hello"
-                 
                 }   
                 
             }
