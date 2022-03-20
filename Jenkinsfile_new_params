@@ -34,6 +34,14 @@ pipeline {
                         ]
                     echo "Lines are ${lines}"
 
+                    def password = input message : "Enter password", 
+                        parameters : [
+                            password(defaultValue : "password", 
+                                    description : "Enter your password", name : "passwd")
+                        ]
+
+                    echo "password is ${password}"
+
                 }
                             
                 
