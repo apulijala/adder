@@ -22,18 +22,13 @@ pipeline {
                     echo "Option is ${answer['Options']}"
                     echo "Perrelease is ${answer['prerelease']}"
 
-                    def credentials = input message : "Choose Credentials", 
-                                parameters : [
-                                        [
-                                            $class: 'CredentialsParameterDefintion', 
-                                            credentialType : 'com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey', 
-                                            defaultValue : "jenkins2-ssh", 
-                                            description : "SSH Key for Jenkins", 
-                                            name : "SSH", 
-                                            required : true
-                                        ]
-                                ]
-                    echo "Credentials are ${credentials}"
+                    def creds = input message: '<message>', 
+                        parameters: [[$class: 'CredentialsParameterDefinition', credentialType: 
+                        'com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey',
+                        defaultValue: 'jenkins2-ssh', description: 'SSH key for access',
+                        name: 'SSH', required: true]]
+                        echo creds
+                 
                     
                 }
                 
