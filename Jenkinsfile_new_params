@@ -12,6 +12,7 @@ pipeline {
         password(name : "secret", 
                 defaultValue :"password", 
                 description: "Enter the password")
+        file(description : "Choose file to upload ", name : "myfile")
     }
 
     stages {
@@ -68,6 +69,17 @@ pipeline {
                                     name : "RESPONSE1"
                                 )
                         ]
+                        def credentials = input message: "select ssh credentials", 
+                            parameters : [
+                                [
+                                    $class : "CredentialsParameterDefinition", 
+                                    credentialType: 'com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl', 
+                                    defaultValue : " " , 
+                                    description : "Enter username and Password", 
+                                    name :"user_and_pass", required: true
+                                ]
+                            ]
+                            
                    
                 }
 
