@@ -6,7 +6,10 @@ pipeline {
         stage("Running some command") {
             steps{
                 echo "========executing A========"
-                def z = input id: 'Approver', message: 'Om Aim Hreem Shreem Kleem Shree Mathre Namaha', ok: 'Approve it', submitterParameter: 'approver'
+                script {
+                    def z = input id: 'Approver', message: 'Om Aim Hreem Shreem Kleem Shree Mathre Namaha', ok: 'Approve it', submitterParameter: 'approver'
+                }
+                
                 
             }
         } 
