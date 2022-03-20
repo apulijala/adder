@@ -16,16 +16,7 @@ pipeline {
                             ]
                     echo "${answer}"
                 }
-                
-                
-            }
-        } 
-        stage('run-parallel-branches') {
-            agent {
-                label "docker"
-            }
-            steps {
-                
+
                 script {
                    def choice = input message : "Choice Input Message ? ", 
                         parameters : [
@@ -37,6 +28,17 @@ pipeline {
                     println(choice)
                 }
 
+
+                
+                
+            }
+        } 
+        stage('run-parallel-branches') {
+            agent {
+                label "docker"
+            }
+            steps {
+                
                 parallel(
                     a: {
                         echo "Parallel Branch A"
