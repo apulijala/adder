@@ -2,9 +2,29 @@ pipeline {
     agent{
         label "docker"
     }
+
+    parameters {
+
+        script {
+            
+            def lines = input message : "Select lines",
+                parameters : [
+                    text(
+                        defaultValue : """
+                            Line one, 
+                            Jaya Guru Datta and Sree Guru Datta, 
+                        """, 
+                        description : "Select the lines", 
+                        name : "InputLines"
+                    )
+                ]
+        }
+    }
     stages {
         stage("Running some command") {
             steps {
+                echo "Input lines are ${InputLines}"
+
                 echo "========executing A========"
                 script {
 
@@ -37,6 +57,7 @@ pipeline {
                         ]
                     echo "${selectedFile}"
 
+                    
 
                     /*
                     def credUserNamePassword = input message: '',  parameters: [[$class:
