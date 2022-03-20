@@ -59,11 +59,21 @@ pipeline {
                   println(" Using dot operator " + loginInformation.passwd)
 
                 }   
+
+                script {
+                    env.RESP1 = input "Enter the response ? " , parameters : [
+                        string(defaultValue : " " , description : "Enter the response", 
+                        name : "RESPONSE1")
+                    ]
+                }
                 
+                script {
+                        println "Response Environment variable : ${env.RESP1}"
+                }
             }
         } 
         stage('run-parallel-branches') {
-            
+
             agent {
                 label "docker"
             }
