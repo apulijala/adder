@@ -43,10 +43,10 @@ pipeline {
                     echo "password is ${password}"
                     def resposne = input message: "Enter the response", parameters : [
                         string(default : "Text Box", description : "Enter Response", 
-                            name : "Response"
+                            name : "response"
                         )
                     ]
-                    echo "Response is ${Response}"
+                    echo "Response is ${response} verified"
 
                     /* Did not work
                     def selection = input message : "Enter the selection", 
