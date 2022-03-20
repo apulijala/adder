@@ -42,6 +42,16 @@ pipeline {
 
                     echo "password is ${password}"
 
+                    def selection = input message : "Enter the selection", 
+                        parameters : [
+                            run(
+                                description : "Choose the run of the project", 
+                                filter  : "ALL", name : "RUN"
+                            )
+                        ]
+                    echo "Selection is ${selection}"
+
+
                 }
                             
                 
