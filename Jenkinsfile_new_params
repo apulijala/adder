@@ -3,23 +3,6 @@ pipeline {
         label "docker"
     }
 
-    parameters {
-
-        script {
-            
-            def lines = input message : "Select lines",
-                parameters : [
-                    text(
-                        defaultValue : """
-                            Line one, 
-                            Jaya Guru Datta and Sree Guru Datta, 
-                        """, 
-                        description : "Select the lines", 
-                        name : "InputLines"
-                    )
-                ]
-        }
-    }
     stages {
         stage("Running some command") {
             steps {
