@@ -61,11 +61,8 @@ pipeline {
                 }   
 
                 script {
-
-                    env.RESP1 = input message: '<message>', parameters: [
-                        string(defaultValue: '', description: 'Enter response 1',
-                    name: 'RESPONSE1')]
-
+                        println("Env script")
+                   
                 }
                 
             }
