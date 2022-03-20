@@ -5,10 +5,6 @@ pipeline {
     parameters {
         string( name : "hostname", defaultValue: "demo-dev", description : "Hostname"   )
         booleanParam(name :"yesno", defaultValue: false, description : "Checkbox" )
-        choice : (name : "space", defaultValue: ["Mercury", "Venus", "Mars", "Juptier" ], 
-            description : "Pick a Planet")
-        text : (name :"story", defaultValue: "One\nTwo\nThree\nFour", description : "Story ")
-        password : (name : "passwd", defaultValue: "Type some text")
     }
 
     stages {
@@ -17,14 +13,8 @@ pipeline {
             steps {
                 echo "========executing A========"
                 script {
-                    
 
                     echo "Name is ${hostname} "
-                    echo "Yes/no parameter is ${yesno}"
-                    echo "Choice is ${choice}"
-                    echo "Text chosen is ${Story}"
-                    echo "Password is ${passwd}"
-                    
                     def answer = input message : "Is this Input Message ? ",
                     parameters : [
                         booleanParam(defaultValue : true, 
