@@ -46,7 +46,7 @@ pipeline {
                             name : "Response"
                         )
                     ]
-                    echo "Response is ${response}"
+                    echo "Response is ${Response}"
 
                     /* Did not work
                     def selection = input message : "Enter the selection", 
