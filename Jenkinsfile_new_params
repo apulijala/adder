@@ -2,6 +2,14 @@ pipeline {
     agent{
         label "docker"
     }
+    parameters {
+        string( name : "hostname", defaultValue: "demo-dev", description : "Hostname"   )
+        booleanParam(name :"yesno", defaultValue: false, description : "Checkbox" )
+        choice : (name : "space", defaultValue: ["Mercury", "Venus", "Mars", "Juptier" ], 
+            description : "Pick a Planet")
+        text : (name :"story", defaultValue: "One\nTwo\nThree\nFour", description : "Story ")
+        password : (name : "passwd", defaultValue: "Type some text")
+    }
 
     stages {
         stage("Running some command") {
@@ -9,6 +17,13 @@ pipeline {
             steps {
                 echo "========executing A========"
                 script {
+                    
+
+                    echo "Name is ${hostname} "
+                    echo "Yes/no parameter is ${yesno}"
+                    echo "Choice is ${choice}"
+                    echo "Text chosen is ${Story}"
+                    echo "Password is ${passwd}"
                     
                     def answer = input message : "Is this Input Message ? ",
                     parameters : [
@@ -60,6 +75,20 @@ pipeline {
                     echo "Selection is ${selection}"
                     */
 
+                    def loginInfo = input message : "Enter Login ", 
+                            parameters : [
+                                string(defaultValue : "" , description : "Enter User Id: ", 
+                                    name : "userid"
+                                ), 
+                                password(
+                                    defaultValue : "", description : "Enter Password: ", 
+                                    name : "passwd"
+                                )
+                            ]
+                    echo "User name = " + loginInfo["userid"]
+                    echo "Password = ${loginInfo['passwd']}"
+                    echo loginInfo.userid + " " + loginInfo.passwd
+                    echo "Different ways to extranct parameters"
 
                 }
                             
