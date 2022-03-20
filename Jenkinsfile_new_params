@@ -11,9 +11,13 @@ pipeline {
         stage("Running some command") {
             steps {
                 script {
-                    echo "Hostname is "
+                    if (hostname == "demo-dev") {
+                        println ("Hostname is ${hostname}")
+                    }else {
+                        println("Hostname is something else : ${hostname}")
+                    }
+                    
                 }
-                echo "Hostname is ${hostname}"
                 
             }
         } 
