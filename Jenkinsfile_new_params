@@ -25,10 +25,39 @@ pipeline {
                         println("Hostname is something else : ${hostname}")
                     }
 
-                    println("Password is ${password}")
+                    println("Password is ${secret}")
                     println("Text value is ${story}")
                     println("Boolean value is ${booleanParam}")
-                    println("Password is ${secret}")
+                    println("Choice is ${choice}")
+
+                    def lines = input message : "lines", 
+                            parameters : [
+                                text(defaultValue : """
+                                    Line 1 and First Line. 
+                                    Line 2 and Second Line. 
+                                    Third Line
+                                    """, 
+                                    description :" All the Lines"
+                                    name :"inputlines"
+                                )
+                            ]
+
+                    println("Lines are " + lines)
+
+                    def loginInformation = input message : "Login", 
+                                    parameters : [
+                                        string(defaultValue : "Login", name : "userid"
+                                         description : "Enter userid"), 
+                                        password(defaultValue : "passwd", 
+                                            description: "Enter Password", 
+                                            name : "passwd"
+                                        )
+
+                                    ]
+                  println("Username = " + loginInformation["userid"])
+                  println("Password =  +  ${loginInformation['passwd']}")
+                  println(" Using dot operator " + loginInformation.passwd)
+
                 }
                 
             }
