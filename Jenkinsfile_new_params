@@ -67,9 +67,6 @@ pipeline {
                     ]
                 }
                 
-                script {
-                        println "Response Environment variable : ${env.RESP1}"
-                }
             }
         } 
         stage('run-parallel-branches') {
